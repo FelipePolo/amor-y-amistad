@@ -1,0 +1,88 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #060c0a;
+}
+
+.all {
+  margin-top: 100px;
+  .corazon {
+    position: relative;
+    background-color: #fff;
+    width: 500px;
+    height: 500px;
+    .barra {
+      width: 100%;
+      position: absolute;
+      bottom: 0px;
+      z-index: 5;
+      background-color: red;
+    }
+    img {
+      position: sticky;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .funcionalidad {
+    display: flex;
+    flex-direction: column;
+    #lista {
+      display: flex;
+      flex-direction: column;
+      color: rgb(228, 15, 15);
+      font-weight: 700;
+      div{
+        margin: 15px 0;
+        display: flex;
+        p,
+        span {
+          margin: 0 10px;
+          color: #fff;
+        }
+      }
+    }
+    button {
+      margin: 20px;
+      height: 50px;
+      border-radius: 30px;
+      font-size: 25px;
+      font-weight: 700;
+      width: 60%;
+      align-self: center;
+    }
+  }
+}
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #ff6e7f 0%,
+    #bfe9ff 51%,
+    #ff6e7f 100%
+  );
+}
+.btn-grad {
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
