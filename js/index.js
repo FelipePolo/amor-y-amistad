@@ -32,56 +32,63 @@ var estudiantes = {
     "VARELA MERCADO CARLOS ANDRES",
   ],
   pathfoto: [],
-};
+}
 
 
 const generar = () =>{
-  let seleccionados = [];
-  let contenedor = document.getElementById("lista");
+  let seleccionados = []
+  let contenedor = document.getElementById("lista")
 
   estudiantes.lista.forEach(nombre => {
     if(!seleccionados.includes(nombre)){
-      let bloque = document.createElement("div");
-      let alumno1 = document.createElement("p");
-      let alumno2 = document.createElement("p");
-      let icono = document.createElement("i");
-      icono.classList.add("far");
-      icono.classList.add("fa-heart");
+      let bloque = document.createElement("div")
+      let alumno1 = document.createElement("p")
+      let alumno2 = document.createElement("p")
+      let icono = document.createElement("i")
+
+      icono.classList.add("far")
+      icono.classList.add("fa-heart")
 
       alumno1.innerHTML = nombre;
-      seleccionados.push(nombre);
+      seleccionados.push(nombre)
 
-      let index = Math.round(Math.random() * estudiantes.lista.length);
+      let index = Math.round(Math.random() * estudiantes.lista.length)
 
       while (seleccionados.includes(estudiantes.lista[index])) {
-        index = Math.round(Math.random() * estudiantes.lista.length);
+        index = Math.round(Math.random() * estudiantes.lista.length)
       }
 
       alumno2.innerHTML = estudiantes.lista[index]
         ? estudiantes.lista[index]
-        : estudiantes.lista[7];
-      seleccionados.push(estudiantes.lista[index]);
+        : estudiantes.lista[7]
+      seleccionados.push(estudiantes.lista[index])
 
-      bloque.appendChild(alumno1);
-      bloque.appendChild(icono);
-      bloque.appendChild(alumno2);
+      bloque.appendChild(alumno1)
+      bloque.appendChild(icono)
+      bloque.appendChild(alumno2)
 
-      contenedor.appendChild(bloque);
+      contenedor.appendChild(bloque)
     }
   })
 }
 
 const animar = () =>{
   let barra = document.getElementById("barra")
-  let cantidad = 8;
-  barra.style.height = cantidad + "%";
-  let bandera = false;
+  let cantidad = 8
+  let bandera = false
+
+  if(barra.style.height === "100%"){
+    barra.style.height = "0%"
+  }
+
+  barra.style.height = cantidad + "%"
+
   setInterval(() => {
     if (barra.style.height !== "100%"){
-      barra.style.height = cantidad++ + "%";
+      barra.style.height = cantidad++ + "%"
     }else if(!bandera){
       generar()
-      bandera = true;
+      bandera = true
     }
   }, 200);
 }
